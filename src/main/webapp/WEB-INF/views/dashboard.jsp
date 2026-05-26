@@ -11,65 +11,165 @@
 
 <title>User Dashboard</title>
 
+<style>
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body{
+        background:#f4f6f9;
+    }
+
+    /* Navbar */
+
+    .navbar{
+        width:100%;
+        background:#243b55;
+        color:white;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:18px 40px;
+        box-shadow:0px 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .logo{
+        font-size:28px;
+        font-weight:bold;
+    }
+
+    .nav-links a{
+        text-decoration:none;
+        color:white;
+        margin-left:25px;
+        font-size:17px;
+        transition:0.3s;
+    }
+
+    .nav-links a:hover{
+        color:#00c6ff;
+    }
+
+    /* Main Container */
+
+    .container{
+        width:500px;
+        background:white;
+        margin:50px auto;
+        padding:40px;
+        border-radius:12px;
+        box-shadow:0px 0px 15px rgba(0,0,0,0.2);
+    }
+
+    h1{
+        text-align:center;
+        color:#243b55;
+        margin-bottom:30px;
+    }
+
+    label{
+        font-weight:bold;
+        color:#333;
+    }
+
+    input[type="text"],
+    textarea,
+    select{
+        width:100%;
+        padding:10px;
+        margin-top:8px;
+        margin-bottom:20px;
+        border:1px solid #ccc;
+        border-radius:6px;
+        font-size:15px;
+    }
+
+    textarea{
+        resize:none;
+    }
+
+    input[type="submit"]{
+        width:100%;
+        padding:12px;
+        background:#243b55;
+        color:white;
+        border:none;
+        border-radius:6px;
+        font-size:16px;
+        cursor:pointer;
+        transition:0.3s;
+    }
+
+    input[type="submit"]:hover{
+        background:#141e30;
+    }
+
+</style>
+
 </head>
 
 <body>
 
-<h1>Repair Booking Form</h1>
-<br><br>
-<a href="myBookings">view my Bookings</a>
+<!-- Navbar -->
 
-<form action="booking" method="post">
+<div class="navbar">
 
-    <label>Customer Name:</label>
-    <input type="text" name="customerName" required>
+    <div class="logo">
+        Multi-Repair Platform
+    </div>
 
-    <br><br>
+    <div class="nav-links">
 
-    <label>Mobile Number:</label>
-    <input type="text" name="mobile" required>
+        <a href="dashboard">Home</a>
+        <a href="myBookings">My Bookings</a>
+        <a href="profile">Profile</a>
+        <a href="logout">Logout</a>
 
-    <br><br>
+    </div>
 
-    <label>Address:</label>
+</div>
 
-    <br>
+<!-- Booking Form -->
 
-    <textarea name="address" rows="4" cols="30" required></textarea>
+<div class="container">
 
-    <br><br>
+    <h1>Repair Booking Form</h1>
 
-    <label>Select Device Type:</label>
+    <form action="booking" method="post">
 
-    <select name="deviceType">
+        <label>Customer Name</label>
+        <input type="text" name="customerName" required>
 
-        <option value="Mobile">Mobile</option>
+        <label>Mobile Number</label>
+        <input type="text" name="mobile" required>
 
-        <option value="Laptop">Laptop</option>
+        <label>Address</label>
+        <textarea name="address" rows="4" required></textarea>
 
-        <option value="Car">Car</option>
+        <label>Select Device Type</label>
 
-        <option value="Cycle">Cycle</option>
+        <select name="deviceType">
 
-    </select>
+            <option value="Mobile">Mobile</option>
+            <option value="Laptop">Laptop</option>
+            <option value="Car">Car</option>
+            <option value="Cycle">Cycle</option>
 
-    <br><br>
+        </select>
 
-    <label>Problem Description:</label>
+        <label>Problem Description</label>
 
-    <br>
+        <textarea name="problem" rows="5" required></textarea>
 
-    <textarea name="problem" rows="5" cols="40" required></textarea>
+        <input type="submit" value="Book Repair">
 
-    <br><br>
+    </form>
 
-    <input type="submit" value="Book Repair">
-
-</form>
-
-<br><br>
-
-<a href="logout">Logout</a>
+</div>
 
 </body>
 
