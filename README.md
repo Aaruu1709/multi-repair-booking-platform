@@ -1,3 +1,15 @@
+In Spring MVC XML configuration, web.xml is used to configure DispatcherServlet, which acts as the front controller of the application.
+
+DispatcherServlet receives all incoming requests and forwards them to the appropriate controller.
+
+The spring-servlet.xml file contains Spring MVC configuration such as component scanning, ViewResolver, and annotation-driven support.
+
+ViewResolver helps map logical view names returned by controller methods to actual JSP files.
+
+For example, if controller returns “home”, ViewResolver converts it into /WEB-INF/views/home.jsp.
+
+This is the basic internal flow of Spring MVC architecture.
+----------------------------------------------------------------------------
 # Multi Repair Booking Platform
 
 Multi Repair Booking Platform is a Java-based web application developed using Spring MVC architecture.  
